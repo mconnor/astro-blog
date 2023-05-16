@@ -1,0 +1,14 @@
+---
+import { Image } from 'astro:assets'
+
+interface Props {
+  url: string
+  alt: string
+  w: number
+  h: number
+}
+
+const { url, alt, w, h } = Astro.props
+---
+
+<Image client:only alt={alt} src={url} format="jpg" width={w} height={h} />
